@@ -7,6 +7,10 @@ from .models import CartItem
 from .serializers import CartItemSerializer
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from .models import CartItem
 
 class AddToCartView(APIView):
     permission_classes = [IsAuthenticated]
@@ -25,3 +29,11 @@ class CartListView(generics.ListAPIView):
 
     def get_queryset(self):
         return CartItem.objects.filter(user=self.request.user)
+
+
+class ClearCartView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def delete(self, request):
+        CartItem.objects.filter(user=request.user).delete()
+        return Response({'message': 'Cart cleared successfully'})
