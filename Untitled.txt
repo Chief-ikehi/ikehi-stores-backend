@@ -1,0 +1,51 @@
+Full-Stack Developer Take-Home Task
+Objective:
+Build a simple eCommerce application where users can browse products, add items to the
+cart, and place an order. The application should have a well-structured backend and frontend,
+following best practices in software engineering.
+📌 Requirements
+Backend 
+1. Authentication & Authorization
+2. Implement user authentication using JWT or session-based auth.
+3. Users should be able to register and log in.
+4. Only authenticated users can place orders.
+5. Database- postgres
+6. User: Stores user information.
+7. Product: Contains product details (name, price, image, stock).
+8. Order: Represents an order placed by a user.
+9. OrderItem: Stores items within an order.
+10. API Endpoints (REST)
+11.
+POST /auth/register → Register a new user
+12.
+POST /auth/login → Log in and receive a token
+13. GET /products → Fetch all available products
+14.
+POST /cart/add → Add a product to the cart (stored in-memory or DB)
+15.
+POST /orders → Place an order with items in the cart
+
+20. Provide a docker-compose.yml to set up the database easily.
+Frontend (Next.js or Nuxt.js)
+1. Single Page Layout
+2. Displays a list of products (fetched from the backend).
+3. Users can add products to the cart.
+4. A checkout button to place an order.
+5. Authentication Flow
+6. Login and Registration pages.
+7. Persist auth state using cookies or local storage.
+8. API Integration
+9. Fetch products from the backend.
+10. Handle authentication via API calls.
+11. Send order details to the backend.
+12. State Management
+13. Use React Context API, Zustand (Next.js), or Vuex/Pinia (Nuxt.js) to manage the cart
+state.
+14. Responsive UI
+15. Implement a clean and simple UI using TailwindCSS.
+🛠 Submission Guidelines
+1. Share the GitHub repository with clear README.md instructions on how to run the
+2. 3. project.
+Include API documentation (Swagger/Postman collection preferred).
+Deploy the application (e.g., Vercel, Render, or CapRover) if possible.
+Bonus Points:
